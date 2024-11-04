@@ -1,0 +1,247 @@
+<div class="mt-32">
+  <div class="container">
+    <div class="grid grid-cols-12 gap-8">
+      <div class="col-span-12 md:col-span-7 xl:col-span-8 border p-5">
+        <a href="javascript:void(0)" class="category text-primary inline-block mb-5">Personal</a>
+        <h1 class="_title font-medium">{{this.productService.selectedTemplateDocument.name}}</h1>
+        <br />
+        <br />
+        <div class="ll-content tex-center" id="resumeBody" #resumeBody>
+
+          <div class="simple-blue"
+            *ngIf="this.productService.selectedTemplateDocument.id==1 || this.productService.selectedTemplateDocument.id>3">
+            <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+            <div class="container">
+              <div class="header">
+                <div class="full-name">
+                  <span class="first-name">{{this.productService.resumeData.personName}}</span>
+                </div>
+                <div class="contact-info">
+                  <span class="email">Email: </span>
+                  <span class="email-val">{{this.productService.resumeData.personEmail}}</span>
+                  <span class="separator"></span>
+                  <span class="phone">Phone: </span>
+                  <span class="phone-val">{{this.productService.resumeData.personPhone}}</span>
+                </div>
+
+                <div class="about">
+                  <span class="position">{{this.productService.resumeData.personPosition}} </span>
+                  <span class="desc">
+                    {{this.productService.resumeData.personSummary}}
+                  </span>
+                </div>
+              </div>
+              <div class="details">
+                <div class="section">
+                  <div class="section__title">Experience</div>
+                  <div class="section__list">
+                    <div class="section__list-item">
+                      <div *ngFor="let experience of this.productService.resumeData.personExperiences">
+                        <div class="name">{{experience}}</div>
+                        <br />
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="section">
+                  <div class="section__title">Education</div>
+                  <div class="section__list">
+                    <div class="section__list-item">
+                      <div *ngFor="let education of this.productService.resumeData.personEducations">
+                        <div class="name">{{education}}</div>
+                        <br />
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="section">
+                  <div class="section__title">Projects</div>
+                  <div class="section__list">
+                    <div *ngFor="let project of this.productService.resumeData.personProjects">
+                      <div class="name">{{project}}</div>
+                      <br />
+                    </div>
+                  </div>
+                </div>
+                <div class="section">
+                  <div class="section__title">Skills</div>
+                  <div class="skills">
+                    <div class="skills__item">
+                      <div *ngFor="let skill of this.productService.resumeData.personSkills">
+                        <div class="name">{{skill}}</div>
+                        <br />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section">
+                  <div class="section__title">
+                    Interests
+                  </div>
+                  <div class="section__list">
+                    <div class="section__list-item">
+                      <p *ngFor="let interest of this.productService.resumeData.personInterests">{{interest}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="gold-fish" *ngIf="this.productService.selectedTemplateDocument.id==2">
+            <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@700&family=Fira+Sans:wght@400;500;700&family=Satisfy&family=Sriracha&family=Kaushan+Script&display=swap" />
+            <h2>{{this.productService.resumeData.personName}}</h2>
+            <h4>{{this.productService.resumeData.personEmail}}</h4>
+            <h4>{{this.productService.resumeData.personPhone}}</h4>
+            <h4>{{this.productService.resumeData.personPosition}}</h4>
+            <h5>{{this.productService.resumeData.personSummary}}</h5>
+            <div class="menu">
+              <div class="course">
+                <h3>Eduation</h3>
+                <div *ngFor="let education of this.productService.resumeData.personEducations">
+                  <div class="name">{{education}}</div>
+                  <br />
+                </div>
+              </div>
+
+              <div class="course">
+                <h3>Experience</h3>
+
+                <div class="item" *ngFor="let experience of this.productService.resumeData.personExperiences">
+                  <h4 class="name">{{experience}}</h4>
+                  <br />
+                </div>
+              </div>
+              <div class="course">
+                <h3>Skills</h3>
+                <div class="item" *ngFor="let skill of this.productService.resumeData.personSkills">
+                  <h4 class="name">{{skill}}</h4>
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="smart-guy" *ngIf="this.productService.selectedTemplateDocument.id==3">
+            <div class="wrapper">
+              <div class="intro">
+                <div class="profile">
+                  <div class="bio">
+                    <h1 class="name">{{this.productService.resumeData.personName}}</h1>
+                    <p class="profession">{{this.productService.resumeData.personPosition}}</p>
+                  </div>
+                </div>
+                <div class="intro-section about">
+                  <h1 class="title">about me</h1>
+                  <p class="paragraph">
+                    {{this.productService.resumeData.personSummary}}
+                  </p>
+                </div>
+                <div class="intro-section contact">
+                  <h1 class="title">Contact</h1>
+                  <div class="info-section">
+                    <i class="fas fa-phone"></i>
+                    <span class="text-white">{{this.productService.resumeData.personPhone}}</span>
+                  </div>
+                  <div class="info-section">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>
+                      <h4>{{this.productService.resumeData.personEmail}}</h4>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="detail">
+                <div class="detail-section edu">
+                  <div class="detail-title">
+                    <div class="title-icon">
+                      <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <span>Eduation</span>
+                  </div>
+                  <div class="detail-content">
+
+                    <div class="timeline-block"
+                      *ngFor="let education of this.productService.resumeData.personEducations">
+                      <h1 class="name">{{education}}</h1>
+                    </div>
+                  </div>
+                </div>
+                <div class="detail-section pg-skill">
+                  <div class="detail-title">
+                    <div class="title-icon">
+                      <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <span>Programming skills</span>
+                  </div>
+                  <div class="detail-content">
+                    <ul class="pg-list">
+                      <li *ngFor="let skill of this.productService.resumeData.personSkills">
+                        <span>{{skill}}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="detail-section interests">
+                  <div class="detail-title">
+                    <div class="title-icon">
+                      <i class="fas fa-heart"></i>
+                    </div>
+                    <span>Interests</span>
+                  </div>
+                  <div class="detail-content">
+                    <div class="outer-frame">
+                      <ul class="pg-list">
+                        <li *ngFor="let interest of this.productService.resumeData.personInterests">
+                          <span>{{interest}}</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-span-12 md:col-span-5 xl:col-span-4">
+        <div class="border">
+          <div class="border-b text-center pt-10 pb-10">
+            <div class="text-accent text-4xl font-semibold">${{this.productService.selectedTemplateDocument.price}}
+            </div>
+            <div class="font-medium text-lg mt-3 text-gray-400 tracking-wider">Price</div>
+          </div>
+
+          <div *ngIf="!this.productService.payed" class="border-b p-5">
+            <div class="border-b px-5 pt-10 pb-12 text-center">
+              <button mat-flat-button (click)="openPayDialog()" class="py-3 px-20 text-xl font-bold bg-primary"
+                color="accent">Buy now</button>
+            </div>
+          </div>
+
+          <div *ngIf="this.productService.payed" class="border-b p-5">
+            <div class="border-b px-5 pt-10 pb-12 text-center">
+              <button mat-flat-button (click)="openDialog()" class="py-3 px-20 text-xl font-bold bg-primary"
+                color="accent">Fill resume data</button>
+            </div>
+            <div class="border-b px-5 pt-10 pb-12 text-center">
+              <button mat-flat-button (click)="generateResume()" class="py-3 px-20 text-xl font-bold"
+                color="accent">Generate resume</button>
+            </div>
+          </div>
+
+          <div class="border mt-5 px-5 py-10 text-center">
+            <p class="font-bold mb-3">Do you have any special requirements?</p>
+            <button mat-stroked-button [routerLink]="['/contact']"
+              class="py-2 px-12 text-lg font-bold text-gray-700">Send
+              us</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
